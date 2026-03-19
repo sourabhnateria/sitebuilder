@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import prisma from "../lib/prisma";
 import openai from "../configs/openai";
-import { use } from "react";
 
 // controller function to make revision
 export const makeRevision = async (req: Request, res: Response) => {

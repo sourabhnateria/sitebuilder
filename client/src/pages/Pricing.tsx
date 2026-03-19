@@ -8,7 +8,7 @@ import api from "@/configs/axios";
 interface Plan {
   id: string;
   name: string;
-  price: number;
+  price: string;
   credits: number;
   description: string;
   features: string[];
@@ -21,7 +21,7 @@ const Pricing = () => {
     try {
       if (!session?.user) return toast("Please sign in to purchase a plan");
       const { data } = await api.post("/api/user/purchase-credits", { planId });
-      window.location.href = data.payment_link;
+      window.location.assign(data.payment_link);
     } catch (error: any) {
       toast.error(error?.response?.data?.message || error.message);
       console.log(error);
@@ -62,7 +62,7 @@ const Pricing = () => {
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center">
                       <svg
-                        className="h-5 w-5 text-indigo-300 mr-2"
+                        className="h-5 w-5 text-indigo-800 mr-2"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"

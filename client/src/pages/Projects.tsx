@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { authClient } from "@/lib/auth-client";
 import api from "@/configs/axios";
@@ -41,20 +41,6 @@ const Projects = () => {
   const [isSaving, setIsSaving] = useState(false);
 
   const previewRef = useRef<ProjectPreviewRef>(null);
-
-  const fetchProject = async () => {
-    console.log("Fetching project...");
-    try {
-      const { data } = await api.get(`/user/project/${projectId}`);
-      console.log("Project data:", data);
-      setProject(data.project);
-      setLoading(false);
-    } catch (error: any) {
-      console.log("Fetch error:", error);
-      toast.error(error?.response?.data?.message || error.message);
-      setLoading(false);
-    }
-  };
 
   const downloadCode = () => {
     const code = previewRef.current?.getCode() || project?.current_code;

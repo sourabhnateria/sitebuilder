@@ -57,9 +57,8 @@ const ProjectPreview = forwardRef<ProjectPreviewRef, ProjectPreviewProps>(
           .querySelectorAll(".ai-selected-element, [data-ai-selected]")
           .forEach((el) => {
             el.classList.remove("ai-selected-element");
-            el.removeAttribute("data-ai-selected")(
-              el as HTMLElement,
-            ).style.outline = "";
+            el.removeAttribute("data-ai-selected");
+            (el as HTMLElement).style.outline = "";
           });
 
         // 2.remove injected style + script from the document

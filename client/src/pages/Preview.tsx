@@ -13,24 +13,6 @@ const Preview = () => {
   const [code, setCode] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const fetchCode = async () => {
-    try {
-      const { data } = await api.get(`/api/project/preview/${projectId}`);
-      setCode(data.project.current_code);
-      if (versionId) {
-        data.project.versions.forEach((version: Version) => {
-          if (version.id === versionId) {
-            setCode(version.code);
-          }
-        });
-      }
-      setLoading(false);
-    } catch (error: any) {
-      toast.error(error?.response?.data?.message || error.message);
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
     if (isPending) return;
     const controller = new AbortController();

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { data, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import type { Project } from "../types";
 import type { Version, Message } from "../assets/index";
 import api from "../configs/axios";

@@ -7,6 +7,7 @@ exports.purchaseCredits = exports.togglePublish = exports.getUserProjects = expo
 const prisma_1 = __importDefault(require("../lib/prisma"));
 const openai_1 = __importDefault(require("../configs/openai"));
 const stripe_1 = __importDefault(require("stripe"));
+const str = (val) => Array.isArray(val) ? val[0] : val;
 // get user credits
 const getUserCredits = async (req, res) => {
     try {
@@ -204,7 +205,7 @@ const getUserProject = async (req, res) => {
         if (!userId) {
             return res.status(401).json({ message: "Unauthorized" });
         }
-        const { projectId } = req.params;
+        const projectId = str(req.params.projectId);
         const project = await prisma_1.default.websiteProject.findUnique({
             where: { id: projectId, userId },
             include: {
@@ -248,7 +249,7 @@ const togglePublish = async (req, res) => {
         if (!userId) {
             return res.status(401).json({ message: "Unauthorized" });
         }
-        const { projectId } = req.params;
+        const projectId = str(req.params.projectId);
         const project = await prisma_1.default.websiteProject.findUnique({
             where: { id: projectId, userId },
         });

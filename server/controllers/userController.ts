@@ -6,6 +6,9 @@ import { Transaction } from "../generated/prisma/browser";
 import Stripe from "stripe";
 import { log } from "node:console";
 
+const str = (val: string | string[]): string =>
+  Array.isArray(val) ? val[0] : val;
+
 // get user credits
 
 export const getUserCredits = async (req: Request, res: Response) => {
@@ -226,7 +229,7 @@ export const getUserProject = async (req: Request, res: Response) => {
       return res.status(401).json({ message: "Unauthorized" });
     }
 
-    const { projectId } = req.params;
+    const projectId = str(req.params.projectId);
 
     const project = await prisma.websiteProject.findUnique({
       where: { id: projectId, userId },
@@ -273,7 +276,7 @@ export const togglePublish = async (req: Request, res: Response) => {
       return res.status(401).json({ message: "Unauthorized" });
     }
 
-    const { projectId } = req.params;
+    const projectId = str(req.params.projectId);
 
     const project = await prisma.websiteProject.findUnique({
       where: { id: projectId, userId },

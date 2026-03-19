@@ -44,7 +44,7 @@ const Navbar = () => {
           <img
             src={assets.logo}
             alt="logo"
-            className="h-5 sm:h-7 bg-black rounded-full"
+            className="h-8 sm:h-9 bg-gray-50 rounded-full"
           />
         </Link>
 

@@ -1,4 +1,42 @@
-<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="100" height="100" rx="50" fill="white"/>
-<path d="M18 57.3929L40.3816 27H80.1711L64.4211 42.6071H49.5V33.9821L31.2632 57.3929H44.5263V69.3036L64.4211 43.0179H81L56.1316 73H19.6579L31.2632 57.3929H18Z" fill="black"/>
+<svg width="100" height="100" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+
+
+  <!-- Large background S (slightly offset left, black) -->
+  <text
+    x="38"
+    y="138"
+    font-family="Arial Black, Arial, sans-serif"
+    font-size="120"
+    font-weight="900"
+    font-style="italic"
+    fill="black"
+    opacity="1"
+  >S</text>
+
+  <!-- Foreground S (slightly offset right, white with black outline effect) -->
+  <text
+    x="62"
+    y="138"
+    font-family="Arial Black, Arial, sans-serif"
+    font-size="120"
+    font-weight="900"
+    font-style="italic"
+    fill="white"
+    stroke="black"
+    stroke-width="6"
+    paint-order="stroke"
+  >S</text>
+
+  <!-- Re-draw front S fill clean -->
+  <text
+    x="62"
+    y="138"
+    font-family="Arial Black, Arial, sans-serif"
+    font-size="120"
+    font-weight="900"
+    font-style="italic"
+    fill="white"
+  >S</text>
+
 </svg>

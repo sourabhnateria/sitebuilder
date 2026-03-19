@@ -16,12 +16,13 @@ import {
   TabletIcon,
   LaptopIcon,
 } from "lucide-react";
-import { assets } from "../assets/assets";
+
 import ProjectPreview, {
   type ProjectPreviewRef,
 } from "../components/ProjectPreview";
 import Sidebar from "../components/Sidebar";
 import type { Project } from "../types";
+import { assets } from "@/assets/assets";
 
 const Projects = () => {
   console.log("Projects component rendering");
@@ -137,14 +138,14 @@ const Projects = () => {
     <div className="flex flex-col h-screen w-full bg-white-900 text-black">
       {/* Header */}
       <div className="flex items-center gap-4 px-4 py-2">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center ">
           <img
-            src={assets.logo}
+            src={assets.favicon}
             alt="logo"
-            className="h-6 cursor-pointer"
+            className="h-9 w-7 cursor-pointer"
             onClick={() => navigate("/")}
           />
-          <div className="max-w-64 sm:max-w-xs">
+          <div className="max-w-60 sm:max-w-xs">
             <p className="text-sm font-medium">{project.name}</p>
             <p className="text-xs text-gray-400">
               Previewing last saved version
@@ -165,18 +166,18 @@ const Projects = () => {
           </div>
         </div>
         {/* {middle} */}
-        <div className=" hidden sm:flex gap-2 bg-gray-950 p-1.5 rounded-md">
+        <div className=" hidden sm:flex gap-2 bg-gray-750 p-1.5 rounded-md">
           <SmartphoneIcon
             onClick={() => setDevice("phone")}
-            className={`size-6 p-1 rounded cursor-pointer ${device === "phone" ? "bg-gray-700" : ""}`}
+            className={`size-6 p-1 rounded cursor-pointer ${device === "phone" ? "bg-gray-300" : ""}`}
           />
           <TabletIcon
             onClick={() => setDevice("tablet")}
-            className={`size-6 p-1 rounded cursor-pointer ${device === "tablet" ? "bg-gray-700" : ""}`}
+            className={`size-6 p-1 rounded cursor-pointer ${device === "tablet" ? "bg-gray-300" : ""}`}
           />
           <LaptopIcon
             onClick={() => setDevice("desktop")}
-            className={`size-6 p-1 rounded cursor-pointer ${device === "desktop" ? "bg-gray-700" : ""}`}
+            className={`size-6 p-1 rounded cursor-pointer ${device === "desktop" ? "bg-gray-300" : ""}`}
           />
         </div>
 

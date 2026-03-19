@@ -41,13 +41,13 @@ const Pricing = () => {
           </p>
         </div>
         <div className="pt-14 py-4 px-4 ">
-          <div className="grid grid-cols-1 md:grid-cols-3 flex-wrap gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 flex-wrap gap-4 text-black">
             {plans.map((plan, idx) => (
               <div
                 key={idx}
                 className="p-6 bg-black/20 ring ring-indigo-950 mx-auto w-full max-w-sm rounded-lg text-white shadow-lg hover:ring-indigo-500 transition-all duration-400"
               >
-                <h3 className="text-xl font-bold">{plan.name}</h3>
+                <h3 className="text-xl font-bold text-black">{plan.name}</h3>
                 <div className="my-2">
                   <span className="text-4xl font-bold">{plan.price}</span>
                   <span className="text-gray-300">
@@ -56,9 +56,9 @@ const Pricing = () => {
                   </span>
                 </div>
 
-                <p className="text-gray-300 mb-6">{plan.description}</p>
+                <p className="text-black mb-6">{plan.description}</p>
 
-                <ul className="space-y-1.5 mb-6 text-sm">
+                <ul className="space-y-1.5 mb-6 text-sm text-black">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center">
                       <svg
@@ -75,7 +75,7 @@ const Pricing = () => {
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span className="text-gray-400">{feature}</span>
+                      <span className="text-black/55">{feature}</span>
                     </li>
                   ))}
                 </ul>
